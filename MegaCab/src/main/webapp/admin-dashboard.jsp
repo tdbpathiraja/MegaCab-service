@@ -320,162 +320,53 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Users Section -->
             <div id="users-section" class="content-section">
                 <div class="container-fluid">
                     <h1 class="section-title">Manage Users</h1>
-                    
+
                     <div class="card glass-effect mb-4">
                         <div class="card-body">
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search users...">
-                                        <button class="btn btn-primary" type="button">
+                                        <input type="text" id="searchInput" class="form-control" placeholder="Search users...">
+                                        <button class="btn btn-primary" id="searchButton" type="button">
                                             <i class="bi bi-search"></i>
                                         </button>
                                     </div>
                                 </div>
                                 <div class="col-md-6 text-md-end mt-3 mt-md-0">
-                                    <button class="btn btn-primary">
-                                        <i class="bi bi-person-plus"></i> Add New User
-                                    </button>
-                                    <button class="btn btn-outline-primary ms-2">
+                                    <button class="btn btn-outline-primary ms-2" id="filterButton">
                                         <i class="bi bi-filter"></i> Filter
                                     </button>
                                 </div>
                             </div>
-                            
+
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table" id="usersTable">
                                     <thead>
-                                        <tr>
-                                            <th>User</th>
-                                            <th>Email</th>
-                                            <th>Phone</th>
-                                            <th>Registered</th>
-                                            <th>Status</th>
-                                            <th>Actions</th>
-                                        </tr>
+                                    <tr>
+                                        <th>Reg Number</th>
+                                        <th>Username</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Actions</th>
+                                    </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="user-info">
-                                                    <img src="/api/placeholder/40/40" class="user-avatar" alt="User">
-                                                    <div class="user-text">
-                                                        <h6 class="user-name">John Smith</h6>
-                                                        <span class="user-role">Premium</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>john.smith@example.com</td>
-                                            <td>(555) 123-4567</td>
-                                            <td>12 Jan 2025</td>
-                                            <td><span class="badge bg-success">Active</span></td>
-                                            <td>
-                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-                                                <button class="btn btn-sm btn-outline-danger ms-1"><i class="bi bi-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="user-info">
-                                                    <img src="/api/placeholder/40/40" class="user-avatar" alt="User">
-                                                    <div class="user-text">
-                                                        <h6 class="user-name">Emma Davis</h6>
-                                                        <span class="user-role">Standard</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>emma.davis@example.com</td>
-                                            <td>(555) 987-6543</td>
-                                            <td>22 Feb 2025</td>
-                                            <td><span class="badge bg-success">Active</span></td>
-                                            <td>
-                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-                                                <button class="btn btn-sm btn-outline-danger ms-1"><i class="bi bi-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="user-info">
-                                                    <img src="/api/placeholder/40/40" class="user-avatar" alt="User">
-                                                    <div class="user-text">
-                                                        <h6 class="user-name">Michael Brown</h6>
-                                                        <span class="user-role">Premium</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>michael.brown@example.com</td>
-                                            <td>(555) 456-7890</td>
-                                            <td>3 Jan 2025</td>
-                                            <td><span class="badge bg-success">Active</span></td>
-                                            <td>
-                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-                                                <button class="btn btn-sm btn-outline-danger ms-1"><i class="bi bi-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="user-info">
-                                                    <img src="/api/placeholder/40/40" class="user-avatar" alt="User">
-                                                    <div class="user-text">
-                                                        <h6 class="user-name">Sophia Miller</h6>
-                                                        <span class="user-role">Standard</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>sophia.miller@example.com</td>
-                                            <td>(555) 234-5678</td>
-                                            <td>15 Feb 2025</td>
-                                            <td><span class="badge bg-warning">Pending</span></td>
-                                            <td>
-                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-                                                <button class="btn btn-sm btn-outline-danger ms-1"><i class="bi bi-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="user-info">
-                                                    <img src="/api/placeholder/40/40" class="user-avatar" alt="User">
-                                                    <div class="user-text">
-                                                        <h6 class="user-name">James Wilson</h6>
-                                                        <span class="user-role">Standard</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>james.wilson@example.com</td>
-                                            <td>(555) 876-5432</td>
-                                            <td>18 Jan 2025</td>
-                                            <td><span class="badge bg-danger">Inactive</span></td>
-                                            <td>
-                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-                                                <button class="btn btn-sm btn-outline-danger ms-1"><i class="bi bi-trash"></i></button>
-                                            </td>
-                                        </tr>
+                                    <!-- Rows will be loaded dynamically via AJAX -->
                                     </tbody>
                                 </table>
                             </div>
-                            
+
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <div>Showing 5 of 125 users</div>
+                                <div id="usersCount">Showing 0 of 0 users</div>
                                 <nav>
-                                    <ul class="pagination">
-                                        <li class="page-item disabled">
-                                            <a class="page-link" href="#" aria-label="Previous">
-                                                <span aria-hidden="true">&laquo;</span>
-                                            </a>
-                                        </li>
-                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Next">
-                                                <span aria-hidden="true">&raquo;</span>
-                                            </a>
-                                        </li>
+                                    <ul class="pagination" id="pagination">
+                                        <!-- Pagination items will be dynamically generated -->
                                     </ul>
                                 </nav>
                             </div>
@@ -483,67 +374,102 @@
                     </div>
                 </div>
             </div>
-            
+
+            <!-- Edit User Modal -->
+            <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="editUserForm">
+                                <input type="hidden" name="userId" id="editUserId">
+                                <div class="mb-3">
+                                    <label for="editRegNumber" class="form-label">Registration Number</label>
+                                    <input type="text" class="form-control" id="editRegNumber" name="editRegNumber" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="editEmail" name="editEmail">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editName" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="editName" name="editName">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editPhone" class="form-label">Phone</label>
+                                    <input type="text" class="form-control" id="editPhone" name="editPhone">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Bookings Section -->
             <div id="bookings-section" class="content-section">
                 <div class="container-fluid">
                     <h1 class="section-title">Manage Bookings</h1>
-                    
-                    <div class="row mb-4">
-                        <div class="col-md-3 col-sm-6 mb-3">
-                            <div class="card glass-effect h-100">
-                                <div class="card-body status-card status-card-yellow">
-                                    <div class="status-icon">
-                                        <i class="bi bi-hourglass-split"></i>
-                                    </div>
-                                    <div class="status-info">
-                                        <h3>32</h3>
-                                        <p>Pending</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 mb-3">
-                            <div class="card glass-effect h-100">
-                                <div class="card-body status-card status-card-green">
-                                    <div class="status-icon">
-                                        <i class="bi bi-check-circle"></i>
-                                    </div>
-                                    <div class="status-info">
-                                        <h3>78</h3>
-                                        <p>Active</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 mb-3">
-                            <div class="card glass-effect h-100">
-                                <div class="card-body status-card status-card-blue">
-                                    <div class="status-icon">
-                                        <i class="bi bi-clock-history"></i>
-                                    </div>
-                                    <div class="status-info">
-                                        <h3>546</h3>
-                                        <p>Completed</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 mb-3">
-                            <div class="card glass-effect h-100">
-                                <div class="card-body status-card status-card-orange">
-                                    <div class="status-icon">
-                                        <i class="bi bi-x-circle"></i>
-                                    </div>
-                                    <div class="status-info">
-                                        <h3>14</h3>
-                                        <p>Cancelled</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
+
+<%--                    <div class="row mb-4">--%>
+<%--                        <div class="col-md-3 col-sm-6 mb-3">--%>
+<%--                            <div class="card glass-effect h-100">--%>
+<%--                                <div class="card-body status-card status-card-yellow">--%>
+<%--                                    <div class="status-icon">--%>
+<%--                                        <i class="bi bi-hourglass-split"></i>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="status-info">--%>
+<%--                                        <h3>32</h3>--%>
+<%--                                        <p>Pending</p>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                        <div class="col-md-3 col-sm-6 mb-3">--%>
+<%--                            <div class="card glass-effect h-100">--%>
+<%--                                <div class="card-body status-card status-card-green">--%>
+<%--                                    <div class="status-icon">--%>
+<%--                                        <i class="bi bi-check-circle"></i>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="status-info">--%>
+<%--                                        <h3>78</h3>--%>
+<%--                                        <p>Active</p>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                        <div class="col-md-3 col-sm-6 mb-3">--%>
+<%--                            <div class="card glass-effect h-100">--%>
+<%--                                <div class="card-body status-card status-card-blue">--%>
+<%--                                    <div class="status-icon">--%>
+<%--                                        <i class="bi bi-clock-history"></i>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="status-info">--%>
+<%--                                        <h3>546</h3>--%>
+<%--                                        <p>Completed</p>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                        <div class="col-md-3 col-sm-6 mb-3">--%>
+<%--                            <div class="card glass-effect h-100">--%>
+<%--                                <div class="card-body status-card status-card-orange">--%>
+<%--                                    <div class="status-icon">--%>
+<%--                                        <i class="bi bi-x-circle"></i>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="status-info">--%>
+<%--                                        <h3>14</h3>--%>
+<%--                                        <p>Cancelled</p>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+
                     <div class="card glass-effect mb-4">
                         <div class="card-body">
                             <div class="row mb-3">
@@ -555,100 +481,94 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="col-md-6 text-md-end mt-3 mt-md-0">
-                                    <button class="btn btn-primary">
-                                        <i class="bi bi-plus-circle"></i> New Booking
-                                    </button>
-                                    <button class="btn btn-outline-primary ms-2">
-                                        <i class="bi bi-filter"></i> Filter
-                                    </button>
-                                </div>
+
                             </div>
-                            
+
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
-                                        <tr>
-                                            <th>Booking ID</th>
-                                            <th>Customer</th>
-                                            <th>Vehicle</th>
-                                            <th>Start Date</th>
-                                            <th>End Date</th>
-                                            <th>Status</th>
-                                            <th>Total</th>
-                                            <th>Actions</th>
-                                        </tr>
+                                    <tr>
+                                        <th>Booking ID</th>
+                                        <th>Customer Name</th>
+                                        <th>Mobile Number</th>
+                                        <th>Booked Vehicle</th>
+                                        <th>Rental Days</th>
+                                        <th>Total Value</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Actions</th>
+                                    </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>#BK7842</td>
-                                            <td>John Smith</td>
-                                            <td>Tesla Model 3</td>
-                                            <td>01 Mar 2025</td>
-                                            <td>05 Mar 2025</td>
-                                            <td><span class="badge bg-success">Active</span></td>
-                                            <td>$375.00</td>
-                                            <td>
-                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></button>
-                                                <button class="btn btn-sm btn-outline-danger ms-1"><i class="bi bi-x-circle"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>#BK7841</td>
-                                            <td>Emma Davis</td>
-                                            <td>Toyota Camry</td>
-                                            <td>28 Feb 2025</td>
-                                            <td>02 Mar 2025</td>
-                                            <td><span class="badge bg-success">Active</span></td>
-                                            <td>$225.00</td>
-                                            <td>
-                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></button>
-                                                <button class="btn btn-sm btn-outline-danger ms-1"><i class="bi bi-x-circle"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>#BK7840</td>
-                                            <td>Michael Brown</td>
-                                            <td>BMW X5</td>
-                                            <td>05 Mar 2025</td>
-                                            <td>10 Mar 2025</td>
-                                            <td><span class="badge bg-warning">Pending</span></td>
-                                            <td>$750.00</td>
-                                            <td>
-                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></button>
-                                                <button class="btn btn-sm btn-outline-success ms-1"><i class="bi bi-check-circle"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>#BK7839</td>
-                                            <td>Sophia Miller</td>
-                                            <td>Honda CR-V</td>
-                                            <td>27 Feb 2025</td>
-                                            <td>28 Feb 2025</td>
-                                            <td><span class="badge bg-info">Completed</span></td>
-                                            <td>$85.00</td>
-                                            <td>
-                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></button>
-                                                <button class="btn btn-sm btn-outline-secondary ms-1"><i class="bi bi-arrow-repeat"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>#BK7838</td>
-                                            <td>James Wilson</td>
-                                            <td>Ford Transit</td>
-                                            <td>02 Mar 2025</td>
-                                            <td>04 Mar 2025</td>
-                                            <td><span class="badge bg-danger">Cancelled</span></td>
-                                            <td>$180.00</td>
-                                            <td>
-                                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></button>
-                                                <button class="btn btn-sm btn-outline-success ms-1"><i class="bi bi-arrow-repeat"></i></button>
-                                            </td>
-                                        </tr>
+                                    <tr>
+                                        <td>#BK7842</td>
+                                        <td>John Smith</td>
+                                        <td>+1 555-123-4567</td>
+                                        <td>Tesla Model 3</td>
+                                        <td>5</td>
+                                        <td>$375.00</td>
+                                        <td>01 Mar 2025</td>
+                                        <td>05 Mar 2025</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#BK7841</td>
+                                        <td>Emma Davis</td>
+                                        <td>+1 555-987-6543</td>
+                                        <td>Toyota Camry</td>
+                                        <td>3</td>
+                                        <td>$225.00</td>
+                                        <td>28 Feb 2025</td>
+                                        <td>02 Mar 2025</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#BK7840</td>
+                                        <td>Michael Brown</td>
+                                        <td>+1 555-234-5678</td>
+                                        <td>BMW X5</td>
+                                        <td>6</td>
+                                        <td>$750.00</td>
+                                        <td>05 Mar 2025</td>
+                                        <td>10 Mar 2025</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#BK7839</td>
+                                        <td>Sophia Miller</td>
+                                        <td>+1 555-876-5432</td>
+                                        <td>Honda CR-V</td>
+                                        <td>2</td>
+                                        <td>$85.00</td>
+                                        <td>27 Feb 2025</td>
+                                        <td>28 Feb 2025</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#BK7838</td>
+                                        <td>James Wilson</td>
+                                        <td>+1 555-345-6789</td>
+                                        <td>Ford Transit</td>
+                                        <td>3</td>
+                                        <td>$180.00</td>
+                                        <td>02 Mar 2025</td>
+                                        <td>04 Mar 2025</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            
+
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <div>Showing 5 of 78 active bookings</div>
                                 <nav>
@@ -975,10 +895,10 @@
                 <div class="container-fluid">
                     <div class="d-flex flex-column flex-md-row justify-content-between">
                         <div class="text-center text-md-start mb-2 mb-md-0">
-                            &copy; 2025 VehicleHub. All rights reserved.
+                            &copy; 2025 MegaCab. All rights reserved.
                         </div>
                         <div class="text-center text-md-end">
-                            Designed with <i class="bi bi-heart-fill text-danger"></i> by Premium Designs
+                            Design for CIS6003 Advanced Programing Assignment
                         </div>
                     </div>
                 </div>
@@ -988,6 +908,8 @@
     
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="src/js/admin.js"></script>
+    <script src="src/js/user-manage.js"></script>
 </body>
 </html>
