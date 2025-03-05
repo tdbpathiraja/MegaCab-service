@@ -1,3 +1,14 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="jakarta.servlet.http.HttpSession" %>
+<%@ page import="com.megacabproject.models.User" %>
+<%
+    if (session == null || session.getAttribute("adminUser") == null) {
+        response.sendRedirect("admin-login.jsp");
+        return;
+    }
+
+    String adminUser = (String) session.getAttribute("adminUser");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +18,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="src/css/admin.css">
+
+    <script src="src/js/admin-dashboard-countdown.js"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -49,7 +62,7 @@
                 </li>
                 
                 <li class="nav-item mt-auto">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="AdminLogoutServlet">
                         <i class="bi bi-box-arrow-right"></i>
                         <span>Logout</span>
                     </a>
