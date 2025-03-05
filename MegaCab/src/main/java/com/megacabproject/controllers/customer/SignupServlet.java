@@ -1,4 +1,4 @@
-package com.megacabproject.controllers;
+package com.megacabproject.controllers.customer;
 
 import com.megacabproject.models.User;
 import com.megacabproject.services.UserService;
