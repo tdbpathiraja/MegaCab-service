@@ -415,77 +415,21 @@
                 <div class="container-fluid">
                     <h1 class="section-title">Manage Bookings</h1>
 
-<%--                    <div class="row mb-4">--%>
-<%--                        <div class="col-md-3 col-sm-6 mb-3">--%>
-<%--                            <div class="card glass-effect h-100">--%>
-<%--                                <div class="card-body status-card status-card-yellow">--%>
-<%--                                    <div class="status-icon">--%>
-<%--                                        <i class="bi bi-hourglass-split"></i>--%>
-<%--                                    </div>--%>
-<%--                                    <div class="status-info">--%>
-<%--                                        <h3>32</h3>--%>
-<%--                                        <p>Pending</p>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                        <div class="col-md-3 col-sm-6 mb-3">--%>
-<%--                            <div class="card glass-effect h-100">--%>
-<%--                                <div class="card-body status-card status-card-green">--%>
-<%--                                    <div class="status-icon">--%>
-<%--                                        <i class="bi bi-check-circle"></i>--%>
-<%--                                    </div>--%>
-<%--                                    <div class="status-info">--%>
-<%--                                        <h3>78</h3>--%>
-<%--                                        <p>Active</p>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                        <div class="col-md-3 col-sm-6 mb-3">--%>
-<%--                            <div class="card glass-effect h-100">--%>
-<%--                                <div class="card-body status-card status-card-blue">--%>
-<%--                                    <div class="status-icon">--%>
-<%--                                        <i class="bi bi-clock-history"></i>--%>
-<%--                                    </div>--%>
-<%--                                    <div class="status-info">--%>
-<%--                                        <h3>546</h3>--%>
-<%--                                        <p>Completed</p>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                        <div class="col-md-3 col-sm-6 mb-3">--%>
-<%--                            <div class="card glass-effect h-100">--%>
-<%--                                <div class="card-body status-card status-card-orange">--%>
-<%--                                    <div class="status-icon">--%>
-<%--                                        <i class="bi bi-x-circle"></i>--%>
-<%--                                    </div>--%>
-<%--                                    <div class="status-info">--%>
-<%--                                        <h3>14</h3>--%>
-<%--                                        <p>Cancelled</p>--%>
-<%--                                    </div>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-
                     <div class="card glass-effect mb-4">
                         <div class="card-body">
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search bookings...">
-                                        <button class="btn btn-primary" type="button">
+                                        <input type="text" id="bookingSearchInput" class="form-control" placeholder="Search bookings...">
+                                        <button class="btn btn-primary" id="bookingSearchButton" type="button">
                                             <i class="bi bi-search"></i>
                                         </button>
                                     </div>
                                 </div>
-
                             </div>
 
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table" id="bookingsTable">
                                     <thead>
                                     <tr>
                                         <th>Booking ID</th>
@@ -494,98 +438,22 @@
                                         <th>Booked Vehicle</th>
                                         <th>Rental Days</th>
                                         <th>Total Value</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
+                                        <th>Start Location</th>
+                                        <th>End Location</th>
                                         <th>Actions</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>#BK7842</td>
-                                        <td>John Smith</td>
-                                        <td>+1 555-123-4567</td>
-                                        <td>Tesla Model 3</td>
-                                        <td>5</td>
-                                        <td>$375.00</td>
-                                        <td>01 Mar 2025</td>
-                                        <td>05 Mar 2025</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#BK7841</td>
-                                        <td>Emma Davis</td>
-                                        <td>+1 555-987-6543</td>
-                                        <td>Toyota Camry</td>
-                                        <td>3</td>
-                                        <td>$225.00</td>
-                                        <td>28 Feb 2025</td>
-                                        <td>02 Mar 2025</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#BK7840</td>
-                                        <td>Michael Brown</td>
-                                        <td>+1 555-234-5678</td>
-                                        <td>BMW X5</td>
-                                        <td>6</td>
-                                        <td>$750.00</td>
-                                        <td>05 Mar 2025</td>
-                                        <td>10 Mar 2025</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#BK7839</td>
-                                        <td>Sophia Miller</td>
-                                        <td>+1 555-876-5432</td>
-                                        <td>Honda CR-V</td>
-                                        <td>2</td>
-                                        <td>$85.00</td>
-                                        <td>27 Feb 2025</td>
-                                        <td>28 Feb 2025</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>#BK7838</td>
-                                        <td>James Wilson</td>
-                                        <td>+1 555-345-6789</td>
-                                        <td>Ford Transit</td>
-                                        <td>3</td>
-                                        <td>$180.00</td>
-                                        <td>02 Mar 2025</td>
-                                        <td>04 Mar 2025</td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-                                        </td>
-                                    </tr>
+                                    <!-- Rows will be loaded dynamically via AJAX -->
                                     </tbody>
                                 </table>
                             </div>
 
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <div>Showing 5 of 78 active bookings</div>
+                                <div id="bookingsCount">Showing 0 of 0 bookings</div>
                                 <nav>
-                                    <ul class="pagination">
-                                        <li class="page-item disabled">
-                                            <a class="page-link" href="#" aria-label="Previous">
-                                                <span aria-hidden="true">&laquo;</span>
-                                            </a>
-                                        </li>
-                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Next">
-                                                <span aria-hidden="true">&raquo;</span>
-                                            </a>
-                                        </li>
+                                    <ul class="pagination" id="bookingPagination">
+                                        <!-- Pagination items will be dynamically generated if needed -->
                                     </ul>
                                 </nav>
                             </div>
@@ -911,5 +779,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="src/js/admin.js"></script>
     <script src="src/js/user-manage.js"></script>
+    <script src="src/js/admin-booking-manage.js"></script>
 </body>
 </html>

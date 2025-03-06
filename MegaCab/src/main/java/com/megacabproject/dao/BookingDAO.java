@@ -3,10 +3,9 @@ package com.megacabproject.dao;
 import com.megacabproject.models.Booking;
 import com.megacabproject.utils.DBConnection;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BookingDAO {
     private Connection conn;
@@ -20,7 +19,7 @@ public class BookingDAO {
         }
     }
 
-    // ✅ **Insert Booking Data into Database**
+    // Existing method to insert a booking
     public boolean insertBooking(Booking booking) {
         String query = "INSERT INTO bookings (booking_id, client_username, customer_name, customer_address, telephone_number, " +
                 "booked_vehicle, vehicle_price_per_day, rental_days, total_value, tax_value, " +
@@ -51,7 +50,51 @@ public class BookingDAO {
         }
     }
 
-    // ✅ **Retrieve a Booking by Booking ID**
+    // Method to retrieve all bookings from the database
+    public List<Booking> getAllBookings() {
+        List<Booking> bookings = new ArrayList<>();
+        String query = "SELECT * FROM bookings";
+        try (Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            while (rs.next()) {
+                Booking booking = new Booking(
+                        rs.getString("booking_id"),
+                        rs.getString("client_username"),
+                        rs.getString("customer_name"),
+                        rs.getString("customer_address"),
+                        rs.getString("telephone_number"),
+                        rs.getString("booked_vehicle"),
+                        rs.getDouble("vehicle_price_per_day"),
+                        rs.getInt("rental_days"),
+                        rs.getDouble("total_value"),
+                        rs.getDouble("tax_value"),
+                        rs.getString("start_destination"),
+                        rs.getString("end_destination"),
+                        rs.getString("discount_code"),
+                        rs.getDouble("discount_value")
+                );
+                bookings.add(booking);
+            }
+        } catch (SQLException e) {
+            System.err.println("❌ ERROR: Failed to fetch all bookings: " + e.getMessage());
+        }
+        return bookings;
+    }
+
+    // Method to delete a booking by booking ID
+    public boolean deleteBooking(String bookingId) {
+        String query = "DELETE FROM bookings WHERE booking_id = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, bookingId);
+            int rowsDeleted = stmt.executeUpdate();
+            return rowsDeleted > 0;
+        } catch (SQLException e) {
+            System.err.println("❌ ERROR: Failed to delete booking: " + e.getMessage());
+            return false;
+        }
+    }
+
+    // Existing method to retrieve a booking by booking ID
     public Booking getBookingById(String bookingId) {
         String query = "SELECT booking_id, client_username, customer_name, customer_address, telephone_number, " +
                 "booked_vehicle, vehicle_price_per_day, rental_days, total_value, tax_value, " +
@@ -61,25 +104,22 @@ public class BookingDAO {
             stmt.setString(1, bookingId);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                String id = rs.getString("booking_id");
-                String username = rs.getString("client_username");
-                String customerName = rs.getString("customer_name");
-                String customerAddress = rs.getString("customer_address");
-                String telephoneNumber = rs.getString("telephone_number");
-                String bookedVehicle = rs.getString("booked_vehicle");
-                double vehiclePricePerDay = rs.getDouble("vehicle_price_per_day");
-                int rentalDays = rs.getInt("rental_days");
-                double totalValue = rs.getDouble("total_value");
-                double taxValue = rs.getDouble("tax_value");
-                String startDestination = rs.getString("start_destination");
-                String endDestination = rs.getString("end_destination");
-                String discountCode = rs.getString("discount_code");
-                double discountValue = rs.getDouble("discount_value");
-
-                // Construct and return the Booking object with all details
-                return new Booking(id, username, customerName, customerAddress, telephoneNumber,
-                        bookedVehicle, vehiclePricePerDay, rentalDays, totalValue, taxValue,
-                        startDestination, endDestination, discountCode, discountValue);
+                return new Booking(
+                        rs.getString("booking_id"),
+                        rs.getString("client_username"),
+                        rs.getString("customer_name"),
+                        rs.getString("customer_address"),
+                        rs.getString("telephone_number"),
+                        rs.getString("booked_vehicle"),
+                        rs.getDouble("vehicle_price_per_day"),
+                        rs.getInt("rental_days"),
+                        rs.getDouble("total_value"),
+                        rs.getDouble("tax_value"),
+                        rs.getString("start_destination"),
+                        rs.getString("end_destination"),
+                        rs.getString("discount_code"),
+                        rs.getDouble("discount_value")
+                );
             }
         } catch (SQLException e) {
             System.err.println("❌ ERROR: Could not retrieve booking. " + e.getMessage());
