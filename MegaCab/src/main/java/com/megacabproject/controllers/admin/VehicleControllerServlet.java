@@ -38,7 +38,7 @@ public class VehicleControllerServlet extends HttpServlet {
         if (!uploadDir.exists()) {
             uploadDir.mkdirs();
         }
-        System.out.println("Upload path for vehicle images: " + uploadPath);
+
     }
 
     @Override
