@@ -1,13 +1,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="jakarta.servlet.http.HttpSession" %>
-<%@ page import="com.megacabproject.models.User" %>
 <%
-    if (session == null || session.getAttribute("adminUser") == null) {
+    // Prevent browser from caching this page (prevents back-button access after logout)
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1
+    response.setHeader("Pragma", "no-cache"); // HTTP 1.0
+    response.setDateHeader("Expires", 0); // Proxies
+
+    // Retrieve session and check authentication
+    HttpSession sessionAdmin = request.getSession(false);
+    if (sessionAdmin == null || sessionAdmin.getAttribute("adminUser") == null) {
         response.sendRedirect("admin-login.jsp");
         return;
     }
 
-    String adminUser = (String) session.getAttribute("adminUser");
+    // Get logged-in admin username
+    String adminUser = (String) sessionAdmin.getAttribute("adminUser");
 %>
 <!DOCTYPE html>
 <html lang="en">
