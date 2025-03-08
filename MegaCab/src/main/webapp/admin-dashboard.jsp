@@ -461,12 +461,12 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Vehicles Section -->
             <div id="vehicles-section" class="content-section">
                 <div class="container-fluid">
                     <h1 class="section-title">Manage Vehicles</h1>
-                    
+
                     <div class="row mb-4">
                         <div class="col-12">
                             <div class="card glass-effect">
@@ -474,17 +474,17 @@
                                     <div class="row mb-3">
                                         <div class="col-md-6">
                                             <div class="input-group">
-                                                <input type="text" class="form-control" placeholder="Search vehicles...">
-                                                <button class="btn btn-primary" type="button">
+                                                <input type="text" id="vehicleSearchInput" class="form-control" placeholder="Search vehicles...">
+                                                <button class="btn btn-primary" id="vehicleSearchButton" type="button">
                                                     <i class="bi bi-search"></i>
                                                 </button>
                                             </div>
                                         </div>
                                         <div class="col-md-6 text-md-end mt-3 mt-md-0">
-                                            <button class="btn btn-primary">
+                                            <button class="btn btn-primary" id="addVehicleBtn">
                                                 <i class="bi bi-plus-circle"></i> Add Vehicle
                                             </button>
-                                            <button class="btn btn-outline-primary ms-2">
+                                            <button class="btn btn-outline-primary ms-2" id="vehicleFilterBtn">
                                                 <i class="bi bi-filter"></i> Filter
                                             </button>
                                         </div>
@@ -493,271 +493,80 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                            <div class="card vehicle-card glass-effect">
-                                <img src="/api/placeholder/300/180" alt="Tesla Model 3" class="vehicle-img">
-                                <div class="vehicle-details">
-                                    <h5 class="vehicle-title">Tesla Model 3</h5>
-                                    <div class="vehicle-info">
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-lightning-charge"></i>
-                                            <span>Electric</span>
-                                        </div>
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-people"></i>
-                                            <span>5 Seats</span>
-                                        </div>
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-gear"></i>
-                                            <span>Auto</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge bg-success">Available</span>
-                                        <span class="fw-bold">$75/day</span>
-                                    </div>
-                                    <div class="d-grid mt-3">
-                                        <button class="btn btn-primary">View Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                            <div class="card vehicle-card glass-effect">
-                                <img src="/api/placeholder/300/180" alt="Toyota Camry" class="vehicle-img">
-                                <div class="vehicle-details">
-                                    <h5 class="vehicle-title">Toyota Camry</h5>
-                                    <div class="vehicle-info">
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-fuel-pump"></i>
-                                            <span>Hybrid</span>
-                                        </div>
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-people"></i>
-                                            <span>5 Seats</span>
-                                        </div>
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-gear"></i>
-                                            <span>Auto</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge bg-success">Available</span>
-                                        <span class="fw-bold">$65/day</span>
-                                    </div>
-                                    <div class="d-grid mt-3">
-                                        <button class="btn btn-primary">View Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                            <div class="card vehicle-card glass-effect">
-                                <img src="/api/placeholder/300/180" alt="BMW X5" class="vehicle-img">
-                                <div class="vehicle-details">
-                                    <h5 class="vehicle-title">BMW X5</h5>
-                                    <div class="vehicle-info">
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-fuel-pump"></i>
-                                            <span>Gasoline</span>
-                                        </div>
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-people"></i>
-                                            <span>5 Seats</span>
-                                        </div>
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-gear"></i>
-                                            <span>Auto</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge bg-danger">Booked</span>
-                                        <span class="fw-bold">$120/day</span>
-                                    </div>
-                                    <div class="d-grid mt-3">
-                                        <button class="btn btn-primary">View Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                            <div class="card vehicle-card glass-effect">
-                                <img src="/api/placeholder/300/180" alt="Honda CR-V" class="vehicle-img">
-                                <div class="vehicle-details">
-                                    <h5 class="vehicle-title">Honda CR-V</h5>
-                                    <div class="vehicle-info">
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-fuel-pump"></i>
-                                            <span>Hybrid</span>
-                                        </div>
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-people"></i>
-                                            <span>5 Seats</span>
-                                        </div>
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-gear"></i>
-                                            <span>Auto</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge bg-success">Available</span>
-                                        <span class="fw-bold">$85/day</span>
-                                    </div>
-                                    <div class="d-grid mt-3">
-                                        <button class="btn btn-primary">View Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                            <div class="card vehicle-card glass-effect">
-                                <img src="/api/placeholder/300/180" alt="Ford Transit" class="vehicle-img">
-                                <div class="vehicle-details">
-                                    <h5 class="vehicle-title">Ford Transit</h5>
-                                    <div class="vehicle-info">
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-fuel-pump"></i>
-                                            <span>Diesel</span>
-                                        </div>
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-people"></i>
-                                            <span>9 Seats</span>
-                                        </div>
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-gear"></i>
-                                            <span>Manual</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge bg-warning">Maintenance</span>
-                                        <span class="fw-bold">$95/day</span>
-                                    </div>
-                                    <div class="d-grid mt-3">
-                                        <button class="btn btn-primary">View Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                            <div class="card vehicle-card glass-effect">
-                                <img src="/api/placeholder/300/180" alt="Audi A4" class="vehicle-img">
-                                <div class="vehicle-details">
-                                    <h5 class="vehicle-title">Audi A4</h5>
-                                    <div class="vehicle-info">
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-fuel-pump"></i>
-                                            <span>Gasoline</span>
-                                        </div>
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-people"></i>
-                                            <span>5 Seats</span>
-                                        </div>
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-gear"></i>
-                                            <span>Auto</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge bg-success">Available</span>
-                                        <span class="fw-bold">$95/day</span>
-                                    </div>
-                                    <div class="d-grid mt-3">
-                                        <button class="btn btn-primary">View Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                            <div class="card vehicle-card glass-effect">
-                                <img src="/api/placeholder/300/180" alt="Jeep Wrangler" class="vehicle-img">
-                                <div class="vehicle-details">
-                                    <h5 class="vehicle-title">Jeep Wrangler</h5>
-                                    <div class="vehicle-info">
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-fuel-pump"></i>
-                                            <span>Gasoline</span>
-                                        </div>
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-people"></i>
-                                            <span>5 Seats</span>
-                                        </div>
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-gear"></i>
-                                            <span>Manual</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge bg-success">Available</span>
-                                        <span class="fw-bold">$110/day</span>
-                                    </div>
-                                    <div class="d-grid mt-3">
-                                        <button class="btn btn-primary">View Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                            <div class="card vehicle-card glass-effect">
-                                <img src="/api/placeholder/300/180" alt="Chevrolet Bolt" class="vehicle-img">
-                                <div class="vehicle-details">
-                                    <h5 class="vehicle-title">Chevrolet Bolt</h5>
-                                    <div class="vehicle-info">
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-lightning-charge"></i>
-                                            <span>Electric</span>
-                                        </div>
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-people"></i>
-                                            <span>5 Seats</span>
-                                        </div>
-                                        <div class="vehicle-info-item">
-                                            <i class="bi bi-gear"></i>
-                                            <span>Auto</span>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge bg-danger">Booked</span>
-                                        <span class="fw-bold">$70/day</span>
-                                    </div>
-                                    <div class="d-grid mt-3">
-                                        <button class="btn btn-primary">View Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                    <!-- Vehicle Cards loaded dynamically via AJAX -->
+                    <div class="row" id="vehiclesContainer">
+                        <!-- Vehicle cards will be appended here -->
                     </div>
-                    
+
                     <div class="d-flex justify-content-end mt-3">
                         <nav>
-                            <ul class="pagination">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
+                            <ul class="pagination" id="vehiclePagination">
+                                <!-- Pagination items can be generated if needed -->
                             </ul>
                         </nav>
                     </div>
                 </div>
             </div>
-            
+
+            <!-- Popup Modal for Add/Edit Vehicle -->
+            <div class="modal fade" id="vehicleModal" tabindex="-1" aria-labelledby="vehicleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Use multipart/form-data for file upload -->
+                        <form id="vehicleForm" enctype="multipart/form-data">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="vehicleModalLabel">Add / Edit Vehicle</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Hidden field for vehicle ID (0 for new vehicle) -->
+                                <input type="hidden" name="vehicleId" id="vehicleId" value="0">
+                                <!-- Hidden field to store current image name -->
+                                <input type="hidden" name="oldVehicleImg" id="oldVehicleImg" value="">
+                                <div class="mb-3">
+                                    <label for="vehicleName" class="form-label">Vehicle Name</label>
+                                    <input type="text" class="form-control" id="vehicleName" name="vehicleName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="vehicleType" class="form-label">Vehicle Type</label>
+                                    <input type="text" class="form-control" id="vehicleType" name="vehicleType" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="fuelType" class="form-label">Fuel Type</label>
+                                    <input type="text" class="form-control" id="fuelType" name="fuelType" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="transmission" class="form-label">Transmission</label>
+                                    <input type="text" class="form-control" id="transmission" name="transmission" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="pricePerDay" class="form-label">Price per Day</label>
+                                    <input type="number" step="0.01" class="form-control" id="pricePerDay" name="pricePerDay" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="driverId" class="form-label">Driver ID</label>
+                                    <input type="text" class="form-control" id="driverId" name="driverId" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="driverName" class="form-label">Driver Name</label>
+                                    <input type="text" class="form-control" id="driverName" name="driverName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="vehicleImg" class="form-label">Vehicle Image</label>
+                                    <input type="file" class="form-control" id="vehicleImg" name="vehicleImg">
+                                    <small id="currentImgInfo" class="text-muted"></small>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <!-- Single submit button for both add and update -->
+                                <button type="submit" class="btn btn-primary">Save Vehicle</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
             <!-- Footer -->
             <footer class="mt-auto py-4 bg-transparent">
                 <div class="container-fluid">
@@ -780,5 +589,6 @@
     <script src="src/js/admin.js"></script>
     <script src="src/js/user-manage.js"></script>
     <script src="src/js/admin-booking-manage.js"></script>
+    <script src="src/js/admin-vehicle-manage.js"></script>
 </body>
 </html>
