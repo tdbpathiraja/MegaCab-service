@@ -6,9 +6,14 @@ import java.util.List;
 
 public class BookingService {
     private final BookingDAO bookingDAO = new BookingDAO();
+    private final EmailService emailService = new EmailService();
 
     public boolean createBooking(Booking booking) {
-        return bookingDAO.insertBooking(booking);
+        boolean success = bookingDAO.insertBooking(booking);
+        if (success) {
+            emailService.sendBookingConfirmationEmail(booking.getUsername(), booking.getBookingId(), booking.getCustomerName(), booking.getTotalValue());
+        }
+        return success;
     }
 
     // Retrieve a booking by its ID
