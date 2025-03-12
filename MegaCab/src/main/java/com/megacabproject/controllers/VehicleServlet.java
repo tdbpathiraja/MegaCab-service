@@ -14,7 +14,6 @@ import java.util.List;
 
 @WebServlet("/VehicleServlet")
 public class VehicleServlet extends HttpServlet {
-
     private final VehicleService vehicleService = new VehicleService();
     private final Gson gson = new Gson();
 
@@ -24,7 +23,6 @@ public class VehicleServlet extends HttpServlet {
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
 
-        // If 'categories' parameter is provided, return unique vehicle categories
         if (request.getParameter("categories") != null &&
                 Boolean.parseBoolean(request.getParameter("categories"))) {
             List<String> categories = vehicleService.getUniqueVehicleCategories();
@@ -33,10 +31,15 @@ public class VehicleServlet extends HttpServlet {
             return;
         }
 
-        // Otherwise, fetch and return the list of vehicles
-        String search = request.getParameter("search");  // optional search string
+        String search = request.getParameter("search");
         List<Vehicle> vehicles = vehicleService.getAllVehicles(search);
+
+        for (Vehicle vehicle : vehicles) {
+            System.out.println("Vehicle Name: " + vehicle.getVehicleName() + " | Image: " + vehicle.getVehicleImg());
+        }
+
         out.print(gson.toJson(vehicles));
         out.flush();
     }
 }
+

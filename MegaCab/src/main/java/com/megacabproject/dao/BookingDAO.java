@@ -94,6 +94,38 @@ public class BookingDAO {
         }
     }
 
+    public List<Booking> getBookingsByUsername(String username) {
+        List<Booking> bookings = new ArrayList<>();
+        String query = "SELECT * FROM bookings WHERE client_username = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(query)) {
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                Booking booking = new Booking(
+                        rs.getString("booking_id"),
+                        rs.getString("client_username"),
+                        rs.getString("customer_name"),
+                        rs.getString("customer_address"),
+                        rs.getString("telephone_number"),
+                        rs.getString("booked_vehicle"),
+                        rs.getDouble("vehicle_price_per_day"),
+                        rs.getInt("rental_days"),
+                        rs.getDouble("total_value"),
+                        rs.getDouble("tax_value"),
+                        rs.getString("start_destination"),
+                        rs.getString("end_destination"),
+                        rs.getString("discount_code"),
+                        rs.getDouble("discount_value")
+                );
+                bookings.add(booking);
+            }
+        } catch (SQLException e) {
+            System.err.println("❌ ERROR: Failed to fetch bookings by username: " + e.getMessage());
+        }
+        return bookings;
+    }
+
+
     // Existing method to retrieve a booking by booking ID
     public Booking getBookingById(String bookingId) {
         String query = "SELECT booking_id, client_username, customer_name, customer_address, telephone_number, " +

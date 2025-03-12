@@ -16,12 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * VehicleController Servlet
- * - **MVC Pattern:** Acts as the Controller in the MVC architecture.
- * - **Handles:** Listing vehicles (with search), adding, editing, and deleting vehicles.
- * - **File Upload Handling:** Uses @MultipartConfig to manage multipart/form-data requests.
- */
+
 @WebServlet("/VehicleController")
 @MultipartConfig
 public class VehicleControllerServlet extends HttpServlet {

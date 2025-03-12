@@ -13,8 +13,8 @@ public class Vehicle {
     private String fuelType;
     private String transmission;
     private double pricePerDay;
-    private String driverId;      // New field for driver ID
-    private String driverName;    // New field for driver name
+    private String driverId;
+    private String driverName;
     private String vehicleImg;
     private String bookingStatus;
 

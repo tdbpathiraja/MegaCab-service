@@ -21,14 +21,11 @@ import java.io.PrintWriter;
  * - **Abstraction:** The `PasswordHash.hashPassword()` method hides hashing logic.
  * - **Open-Closed Principle:** The servlet remains open for extension without modification by using the service layer.
  */
-@WebServlet("/SignupServlet") // Web service endpoint
+@WebServlet("/SignupServlet")
 public class SignupServlet extends HttpServlet {
 
-    private final UserService userService = new UserService(); // Encapsulation: Service Layer instance
+    private final UserService userService = new UserService();
 
-    /**
-     * Handles POST requests for user signup.
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -41,7 +38,7 @@ public class SignupServlet extends HttpServlet {
         String telephone = request.getParameter("telephone");
         String nic = request.getParameter("nic");
         String email = request.getParameter("email");
-        String password = PasswordHash.hashPassword(request.getParameter("password")); // Abstraction: Password hashing
+        String password = PasswordHash.hashPassword(request.getParameter("password"));
 
         // 🔹 Creating a User object
         User newUser = new User(0, "", username, fullName, address, telephone, nic, email, password);

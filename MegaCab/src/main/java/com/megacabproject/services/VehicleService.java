@@ -5,11 +5,7 @@ import com.megacabproject.models.Vehicle;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Service class for Vehicle operations.
- * - **Service Layer:** Handles business logic and acts as an intermediary between the controller and DAO.
- * - **Encapsulation:** Provides abstraction over DAO operations.
- */
+
 public class VehicleService {
     private VehicleDAO vehicleDAO;
 
@@ -17,20 +13,11 @@ public class VehicleService {
         this.vehicleDAO = new VehicleDAO();
     }
 
-    /**
-     * Retrieves all vehicles based on a search parameter.
-     * @param search Search string for filtering vehicles by name.
-     * @return List of Vehicle objects.
-     */
+
     public List<Vehicle> getAllVehicles(String search) {
         return vehicleDAO.getAllVehicles(search);
     }
 
-    /**
-     * Retrieves unique vehicle categories.
-     * - **DSA Concept:** Uses Java Streams to filter distinct categories.
-     * @return List of unique vehicle category strings.
-     */
     public List<String> getUniqueVehicleCategories() {
         List<String> categories = vehicleDAO.getAllVehicleCategories();
         return categories.stream().distinct().collect(Collectors.toList());

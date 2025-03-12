@@ -39,14 +39,18 @@
         fetch("VehicleServlet")
             .then(response => response.json())
             .then(data => {
+                console.log("Fetched Vehicles:", data);
                 let vehicleGrid = document.getElementById("vehicle-grid");
-                vehicleGrid.innerHTML = ""; // Clear existing elements
+                vehicleGrid.innerHTML = "";
 
                 data.forEach(vehicle => {
+                    let imagePath = "src/img/Vehicles/" + vehicle.vehicleImg;
+                    console.log("Vehicle Image Path:", imagePath);
+
                     let vehicleCard = '<div class="col-md-3 vehicle-card" data-category="' + vehicle.vehicleType + '">'
                         + '<div class="card">'
                         + '<div class="card-img">'
-                        + '<img src="src/img/Vehicles/' + vehicle.vehicleImg + '" alt="' + vehicle.vehicleName + '">'
+                        + '<img src="' + imagePath + '" alt="' + vehicle.vehicleName + '">'
                         + (vehicle.bookingStatus === "booked" ? '<div class="not-available">Not Available</div>' : '')
                         + '</div>'
                         + '<div class="card-body">'
@@ -66,9 +70,9 @@
 
                     vehicleGrid.innerHTML += vehicleCard;
                 });
-
             })
             .catch(error => console.error("❌ Error fetching vehicles:", error));
+
 
         // Fetch Vehicle Categories
         fetch("VehicleServlet?categories=true")

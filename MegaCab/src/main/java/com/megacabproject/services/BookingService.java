@@ -21,6 +21,11 @@ public class BookingService {
         return bookingDAO.getBookingById(bookingId);
     }
 
+    public List<Booking> getBookingsByUsername(String username) {
+        return bookingDAO.getBookingsByUsername(username);
+    }
+
+
     // Retrieve all bookings
     public List<Booking> getAllBookings() {
         return bookingDAO.getAllBookings();

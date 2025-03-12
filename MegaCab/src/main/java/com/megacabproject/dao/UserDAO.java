@@ -16,7 +16,7 @@ public class UserDAO {
         if (this.conn == null) {
             System.err.println("ERROR: Database connection is NULL!");
         } else {
-            System.out.println("✅ UserDAO connected successfully.");
+            System.out.println("UserDAO connected successfully.");
         }
     }
 
@@ -28,7 +28,7 @@ public class UserDAO {
 
     public boolean registerUser(User user) {
         if (conn == null) {
-            System.err.println("❌ ERROR: Cannot register user, DB connection NULL!");
+            System.err.println("ERROR: Cannot register user, DB connection NULL!");
             return false;
         }
         String query = "INSERT INTO users (reg_number, username, full_name, address, telephone, nic, email, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
@@ -43,17 +43,17 @@ public class UserDAO {
             stmt.setString(7, user.getEmail());
             stmt.setString(8, user.getPassword());
             int rowsInserted = stmt.executeUpdate();
-            System.out.println("✅ User Registered: " + user.getUsername() + " (Reg: " + regNumber + ")");
+            System.out.println("User Registered: " + user.getUsername() + " (Reg: " + regNumber + ")");
             return rowsInserted > 0;
         } catch (SQLException e) {
-            System.err.println("❌ ERROR: User Registration Failed! SQL Error: " + e.getMessage());
+            System.err.println("ERROR: User Registration Failed! SQL Error: " + e.getMessage());
             return false;
         }
     }
 
     public User validateUser(String username, String hashedPassword) {
         if (conn == null) {
-            System.err.println("❌ ERROR: Cannot validate user, DB connection NULL!");
+            System.err.println("ERROR: Cannot validate user, DB connection NULL!");
             return null;
         }
         String query = "SELECT * FROM users WHERE username = ? AND password = ?";
@@ -62,7 +62,7 @@ public class UserDAO {
             stmt.setString(2, hashedPassword);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                System.out.println("✅ User Found: " + rs.getString("username"));
+                System.out.println("User Found: " + rs.getString("username"));
                 return new User(
                         rs.getInt("id"),
                         rs.getString("reg_number"),
@@ -76,7 +76,7 @@ public class UserDAO {
                 );
             }
         } catch (SQLException e) {
-            System.err.println("❌ ERROR: User Login Validation Failed: " + e.getMessage());
+            System.err.println("ERROR: User Login Validation Failed: " + e.getMessage());
         }
         return null;
     }
@@ -96,7 +96,7 @@ public class UserDAO {
                 }
             }
         } catch (SQLException e) {
-            System.err.println("❌ ERROR: Failed to check existing user: " + e.getMessage());
+            System.err.println("ERROR: Failed to check existing user: " + e.getMessage());
         }
         return 0; // No match found
     }
