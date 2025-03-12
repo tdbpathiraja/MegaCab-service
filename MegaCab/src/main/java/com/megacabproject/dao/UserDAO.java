@@ -103,7 +103,7 @@ public class UserDAO {
 
     public User getUserByUsername(String username) {
         if (conn == null) {
-            System.err.println("❌ ERROR: Cannot fetch user, DB connection NULL!");
+            System.err.println("ERROR: Cannot fetch user, DB connection NULL!");
             return null;
         }
         String query = "SELECT full_name, address FROM users WHERE username = ?";
@@ -111,7 +111,7 @@ public class UserDAO {
             stmt.setString(1, username);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                System.out.println("✅ User Data Fetched for: " + username);
+                System.out.println("User Data Fetched for: " + username);
                 return new User(
                         0, // ID not needed
                         "", // Registration Number not needed
@@ -124,10 +124,10 @@ public class UserDAO {
                         ""
                 );
             } else {
-                System.out.println("❌ No User Found for username: " + username);
+                System.out.println("No User Found for username: " + username);
             }
         } catch (SQLException e) {
-            System.err.println("❌ ERROR: Failed to fetch user details: " + e.getMessage());
+            System.err.println("ERROR: Failed to fetch user details: " + e.getMessage());
         }
         return null;
     }
@@ -153,7 +153,7 @@ public class UserDAO {
                 users.add(user);
             }
         } catch (SQLException e) {
-            System.err.println("❌ ERROR: Failed to fetch all users: " + e.getMessage());
+            System.err.println("ERROR: Failed to fetch all users: " + e.getMessage());
         }
         return users;
     }
@@ -178,7 +178,7 @@ public class UserDAO {
                 );
             }
         } catch (SQLException e) {
-            System.err.println("❌ ERROR: Failed to fetch user by ID: " + e.getMessage());
+            System.err.println("ERROR: Failed to fetch user by ID: " + e.getMessage());
         }
         return null;
     }
@@ -195,7 +195,7 @@ public class UserDAO {
             int rowsUpdated = stmt.executeUpdate();
             return rowsUpdated > 0;
         } catch (SQLException e) {
-            System.err.println("❌ ERROR: Failed to update user: " + e.getMessage());
+            System.err.println("ERROR: Failed to update user: " + e.getMessage());
             return false;
         }
     }
@@ -207,7 +207,7 @@ public class UserDAO {
             int rowsDeleted = stmt.executeUpdate();
             return rowsDeleted > 0;
         } catch (SQLException e) {
-            System.err.println("❌ ERROR: Failed to delete user: " + e.getMessage());
+            System.err.println("ERROR: Failed to delete user: " + e.getMessage());
             return false;
         }
     }

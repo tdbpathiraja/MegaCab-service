@@ -19,9 +19,9 @@ public class VehicleDAO {
     public VehicleDAO() {
         this.conn = DBConnection.getConnection();
         if (this.conn == null) {
-            System.err.println("❌ ERROR: Database connection is NULL in VehicleDAO!");
+            System.err.println("ERROR: Database connection is NULL in VehicleDAO!");
         } else {
-            System.out.println("✅ VehicleDAO connected to the database.");
+            System.out.println("VehicleDAO connected to the database.");
         }
     }
 
@@ -78,7 +78,7 @@ public class VehicleDAO {
                 }
             }
         } catch (SQLException e) {
-            System.err.println("❌ ERROR: Failed to fetch vehicles: " + e.getMessage());
+            System.err.println("ERROR: Failed to fetch vehicles: " + e.getMessage());
         }
         return vehicles;
     }
@@ -96,7 +96,7 @@ public class VehicleDAO {
                 categories.add(rs.getString("vehicle_type"));
             }
         } catch (SQLException e) {
-            System.err.println("❌ ERROR: Failed to fetch vehicle categories: " + e.getMessage());
+            System.err.println("ERROR: Failed to fetch vehicle categories: " + e.getMessage());
         }
         return categories;
     }
@@ -124,7 +124,7 @@ public class VehicleDAO {
             int rowsInserted = stmt.executeUpdate();
             return rowsInserted > 0;
         } catch(SQLException e) {
-            System.err.println("❌ ERROR: Failed to add vehicle: " + e.getMessage());
+            System.err.println("ERROR: Failed to add vehicle: " + e.getMessage());
             return false;
         }
     }
@@ -150,7 +150,7 @@ public class VehicleDAO {
             int rowsUpdated = stmt.executeUpdate();
             return rowsUpdated > 0;
         } catch(SQLException e) {
-            System.err.println("❌ ERROR: Failed to update vehicle: " + e.getMessage());
+            System.err.println("ERROR: Failed to update vehicle: " + e.getMessage());
             return false;
         }
     }
@@ -168,7 +168,7 @@ public class VehicleDAO {
             int rowsDeleted = stmt.executeUpdate();
             return rowsDeleted > 0;
         } catch(SQLException e) {
-            System.err.println("❌ ERROR: Failed to delete vehicle: " + e.getMessage());
+            System.err.println("ERROR: Failed to delete vehicle: " + e.getMessage());
             return false;
         }
     }

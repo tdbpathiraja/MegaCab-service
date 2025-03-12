@@ -13,9 +13,9 @@ public class BookingDAO {
     public BookingDAO() {
         this.conn = DBConnection.getConnection();
         if (this.conn == null) {
-            System.err.println("❌ ERROR: Database connection is NULL!");
+            System.err.println("ERROR: Database connection is NULL!");
         } else {
-            System.out.println("✅ BookingDAO connected successfully.");
+            System.out.println("BookingDAO connected successfully.");
         }
     }
 
@@ -42,10 +42,10 @@ public class BookingDAO {
             stmt.setDouble(14, booking.getDiscountValue());
 
             int rowsInserted = stmt.executeUpdate();
-            System.out.println("✅ Booking inserted successfully. Booking ID: " + booking.getBookingId());
+            System.out.println("Booking inserted successfully. Booking ID: " + booking.getBookingId());
             return rowsInserted > 0;
         } catch (SQLException e) {
-            System.err.println("❌ ERROR: Booking insertion failed! SQL Error: " + e.getMessage());
+            System.err.println("ERROR: Booking insertion failed! SQL Error: " + e.getMessage());
             return false;
         }
     }
@@ -76,7 +76,7 @@ public class BookingDAO {
                 bookings.add(booking);
             }
         } catch (SQLException e) {
-            System.err.println("❌ ERROR: Failed to fetch all bookings: " + e.getMessage());
+            System.err.println("ERROR: Failed to fetch all bookings: " + e.getMessage());
         }
         return bookings;
     }
@@ -89,7 +89,7 @@ public class BookingDAO {
             int rowsDeleted = stmt.executeUpdate();
             return rowsDeleted > 0;
         } catch (SQLException e) {
-            System.err.println("❌ ERROR: Failed to delete booking: " + e.getMessage());
+            System.err.println("ERROR: Failed to delete booking: " + e.getMessage());
             return false;
         }
     }
@@ -120,7 +120,7 @@ public class BookingDAO {
                 bookings.add(booking);
             }
         } catch (SQLException e) {
-            System.err.println("❌ ERROR: Failed to fetch bookings by username: " + e.getMessage());
+            System.err.println("ERROR: Failed to fetch bookings by username: " + e.getMessage());
         }
         return bookings;
     }
@@ -154,7 +154,7 @@ public class BookingDAO {
                 );
             }
         } catch (SQLException e) {
-            System.err.println("❌ ERROR: Could not retrieve booking. " + e.getMessage());
+            System.err.println("ERROR: Could not retrieve booking. " + e.getMessage());
         }
         return null;
     }

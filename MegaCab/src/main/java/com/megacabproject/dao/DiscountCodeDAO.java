@@ -19,9 +19,9 @@ public class DiscountCodeDAO {
     public DiscountCodeDAO() {
         this.conn = DBConnection.getConnection();
         if (this.conn == null) {
-            System.err.println("❌ ERROR: Database connection is NULL in DiscountCodeDAO!");
+            System.err.println("ERROR: Database connection is NULL in DiscountCodeDAO!");
         } else {
-            System.out.println("✅ DiscountCodeDAO connected successfully.");
+            System.out.println("DiscountCodeDAO connected successfully.");
         }
     }
 
@@ -45,7 +45,7 @@ public class DiscountCodeDAO {
                 );
             }
         } catch (SQLException e) {
-            System.err.println("❌ ERROR: Failed to fetch discount code: " + e.getMessage());
+            System.err.println("ERROR: Failed to fetch discount code: " + e.getMessage());
         }
         return null;
     }
