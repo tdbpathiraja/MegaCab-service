@@ -598,7 +598,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="copyright">
-                    <p class="mb-0">&copy; 2025 Premium Car Rental. All rights reserved.</p>
+                    <p class="mb-0">&copy; 2025 MegaCab. All rights reserved.</p>
                 </div>
                 <div class="footer-links">
                     <a href="#">Privacy Policy</a>
