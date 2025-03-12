@@ -12,7 +12,7 @@ public class DBConnection {
     public static Connection getConnection() {
         if (connection == null) {
             try {
-                System.out.println("Attempting to connect to database...");
+                System.out.println("Connecting to the database..");
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
                 connection = DriverManager.getConnection(

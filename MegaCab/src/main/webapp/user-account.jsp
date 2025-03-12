@@ -650,7 +650,7 @@
                         '<td><span class="booking-id">' + booking.bookingId + '</span></td>' +
                         '<td><span class="vehicle-model">' + booking.bookedVehicle + '</span></td>' +
                         '<td>' + booking.rentalDays + '</td>' +
-                        '<td><span class="amount-paid">$' + booking.totalValue + '</span></td>' +
+                        '<td><span class="amount-paid">Rs.' + booking.totalValue + '</span></td>' +
                         '<td>' + booking.startDestination + '</td>' +
                         '<td>' + booking.endDestination + '</td>' +
                         '<td>' +

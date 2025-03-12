@@ -42,7 +42,7 @@ $(document).ready(function() {
                                     <div class="vehicle-info mt-2">
                                         <div class="vehicle-info-item">
                                             <i class="bi bi-cash"></i>
-                                            <span>$${vehicle.pricePerDay}/day</span>
+                                            <span>Rs.${vehicle.pricePerDay}/day</span>
                                         </div>
                                     </div>
                                     <div class="vehicle-info mt-2">

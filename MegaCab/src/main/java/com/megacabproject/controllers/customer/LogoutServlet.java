@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("/logout")
 public class LogoutServlet extends HttpServlet {
@@ -21,6 +22,13 @@ public class LogoutServlet extends HttpServlet {
         response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
         response.setHeader("Pragma", "no-cache");
         response.setDateHeader("Expires", 0);
-        response.sendRedirect("auth.jsp?logout=success");
+
+        // Output a JS alert and redirect to the login page
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("<html><head><script type='text/javascript'>");
+        out.println("alert('Successfully Logged Out!');");
+        out.println("window.location.href = 'auth.jsp?logout=success';");
+        out.println("</script></head><body></body></html>");
     }
 }
