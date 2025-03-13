@@ -1,11 +1,6 @@
 package com.megacabproject.models;
 
-/**
- * Vehicle Model class representing the 'renting_vehicles' table.
- * - **Encapsulation:** Private fields with public getters & setters.
- * - **Open-Closed Principle:** Allows extension without modification.
- * - **Used in:** DAO Layer, Service Layer.
- */
+
 public class Vehicle {
     private int id;
     private String vehicleName;
@@ -18,7 +13,7 @@ public class Vehicle {
     private String vehicleImg;
     private String bookingStatus;
 
-    // Constructor with all fields (including new ones)
+    // Constructor with all fields
     public Vehicle(int id, String vehicleName, String vehicleType, String fuelType,
                    String transmission, double pricePerDay, String driverId, String driverName,
                    String vehicleImg, String bookingStatus) {
@@ -34,7 +29,7 @@ public class Vehicle {
         this.bookingStatus = bookingStatus;
     }
 
-    // Getters and Setters (Encapsulation)
+    // Getters and Setters
     public int getId() { return id; }
     public String getVehicleName() { return vehicleName; }
     public String getVehicleType() { return vehicleType; }

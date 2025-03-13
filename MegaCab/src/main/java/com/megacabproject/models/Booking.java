@@ -1,11 +1,5 @@
 package com.megacabproject.models;
 
-/**
- * 🔹 Booking Model Class
- * - **Encapsulation:** Private fields with public getters & setters.
- * - **OOP Concepts:** Abstraction (Hides implementation details from outside classes).
- * - **Design Pattern Used:** Factory Pattern (Used when creating Booking objects in BookingServlet).
- */
 public class Booking {
     private String bookingId;
     private String username;
@@ -44,7 +38,7 @@ public class Booking {
         this.discountValue = discountValue;
     }
 
-    // 🔹 Getters and Setters (Encapsulation)
+    // 🔹 Getters and Setters
 
 
     public String getUsername() {

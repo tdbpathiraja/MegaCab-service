@@ -2,13 +2,7 @@ package com.megacabproject.models;
 
 import java.sql.Timestamp;
 
-/**
- * DiscountCode Model Class
- * - Represents a discount code entry in the database.
- * - **OOP Concepts Used:** Encapsulation (private fields with public getters/setters),
- *   Abstraction (hiding implementation details).
- * - **Design Patterns:** Plain POJO (Plain Old Java Object) used as a Data Model.
- */
+
 public class DiscountCode {
     private int id;
     private String discountCode;
