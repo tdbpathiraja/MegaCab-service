@@ -8,11 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * DiscountCodeDAO handles all database operations for discount codes.
- * - **Design Pattern:** DAO Pattern (Separation of DB logic)
- * - **OOP Concepts:** Encapsulation (private connection), Abstraction (methods hide SQL details)
- */
+
 public class DiscountCodeDAO {
     private final Connection conn;
 
@@ -25,12 +21,7 @@ public class DiscountCodeDAO {
         }
     }
 
-    /**
-     * Retrieves the discount percentage for a given discount code.
-     *
-     * @param discountCode The discount code to validate.
-     * @return A DiscountCode object if valid; null otherwise.
-     */
+
     public DiscountCode getDiscountByCode(String discountCode) {
         String query = "SELECT * FROM discount_codes WHERE discount_code = ?";
         try (PreparedStatement stmt = conn.prepareStatement(query)) {

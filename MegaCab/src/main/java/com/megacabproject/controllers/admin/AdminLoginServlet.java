@@ -9,16 +9,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-/**
- * AdminLoginServlet handles admin authentication.
- *
- * Design Patterns & OOP Concepts:
- * - **Singleton Pattern:** Although not explicitly used here, the overall application uses a singleton DB connection.
- * - **Encapsulation & Abstraction:** The admin credentials are hard-coded, and the logic is encapsulated within this servlet.
- * - **Layered Architecture:** Acts as the Presentation Layer, delegating no business logic to any service.
- *
- * Note: Hard-coded credentials (admin:admin123) are used.
- */
+
 @WebServlet("/AdminLoginServlet")
 public class AdminLoginServlet extends HttpServlet {
 
@@ -33,11 +24,11 @@ public class AdminLoginServlet extends HttpServlet {
 
         // Validate against hard-coded credentials
         if (ADMIN_USERNAME.equals(username) && ADMIN_PASSWORD.equals(password)) {
-            // Create a session and store admin info (using full string for simplicity)
+            // Create a session and store admin info
             HttpSession session = request.getSession();
             session.setAttribute("adminUser", username);
-            // Set session timeout to 10 seconds (inactivity)
-            session.setMaxInactiveInterval(10);
+            // Set session timeout to 60 seconds
+            session.setMaxInactiveInterval(60);
             // Redirect to admin dashboard on success
             response.sendRedirect("admin-dashboard.jsp");
         } else {

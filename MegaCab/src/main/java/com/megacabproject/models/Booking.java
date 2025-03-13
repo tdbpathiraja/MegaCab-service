@@ -17,7 +17,7 @@ public class Booking {
     private double discountValue;
 
     /**
-     * 🔹 Constructor: Initializes a new Booking object.
+     *Constructor
      */
     public Booking(String bookingId, String username, String customerName, String customerAddress, String telephoneNumber,
                    String bookedVehicle, double vehiclePricePerDay, int rentalDays, double totalValue, double taxValue,
@@ -38,7 +38,7 @@ public class Booking {
         this.discountValue = discountValue;
     }
 
-    // 🔹 Getters and Setters
+    //Getters and Setters
 
 
     public String getUsername() {

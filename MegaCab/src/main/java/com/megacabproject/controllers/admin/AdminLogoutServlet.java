@@ -9,13 +9,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-/**
- * AdminLogoutServlet handles logging out the admin.
- *
- * Design Patterns & OOP Concepts:
- * - **Encapsulation:** The logout logic is encapsulated within this servlet.
- * - **Layered Architecture:** Acts as the Presentation Layer by handling HTTP requests.
- */
+
 @WebServlet("/AdminLogoutServlet")
 public class AdminLogoutServlet extends HttpServlet {
 

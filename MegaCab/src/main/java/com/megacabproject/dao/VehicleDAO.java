@@ -7,11 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * DAO Class for managing database operations related to Vehicles.
- * - **DAO Pattern:** Separates database logic from business logic.
- * - **Encapsulation:** Private fields for database operations.
- */
+
 public class VehicleDAO {
     private Connection conn;
 
@@ -25,13 +21,7 @@ public class VehicleDAO {
         }
     }
 
-    /**
-     * Fetches all vehicles from the database with optional search.
-     * - **Used in:** Service Layer, Listing in Vehicles Section.
-     * - **DSA Concept:** Uses ArrayList to store and return Vehicle objects.
-     * @param search Search string (vehicle name) – if null or empty, returns all vehicles.
-     * @return List of Vehicle objects.
-     */
+
     public List<Vehicle> getAllVehicles(String search) {
         List<Vehicle> vehicles = new ArrayList<>();
         String query;
@@ -83,10 +73,7 @@ public class VehicleDAO {
         return vehicles;
     }
 
-    /**
-     * Fetches distinct vehicle categories for filtering.
-     * - **Returns:** List of unique vehicle category strings.
-     */
+
     public List<String> getAllVehicleCategories() {
         List<String> categories = new ArrayList<>();
         String query = "SELECT DISTINCT vehicle_type FROM renting_vehicles";
@@ -102,12 +89,7 @@ public class VehicleDAO {
     }
 
 
-    /**
-     * Adds a new vehicle to the database.
-     * - **Design Pattern:** DAO Pattern.
-     * @param vehicle Vehicle object containing new vehicle data.
-     * @return true if insertion is successful, false otherwise.
-     */
+
     public boolean addVehicle(Vehicle vehicle) {
         String query = "INSERT INTO renting_vehicles (vehicle_name, vehicle_type, fuel_type, transmission, price_per_day, driver_id, driver_name, vehicle_img, booking_status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -129,12 +111,7 @@ public class VehicleDAO {
         }
     }
 
-    /**
-     * Updates an existing vehicle in the database.
-     * - **Design Pattern:** DAO Pattern.
-     * @param vehicle Vehicle object containing updated vehicle data.
-     * @return true if update is successful, false otherwise.
-     */
+
     public boolean updateVehicle(Vehicle vehicle) {
         String query = "UPDATE renting_vehicles SET vehicle_name = ?, vehicle_type = ?, fuel_type = ?, transmission = ?, price_per_day = ?, driver_id = ?, driver_name = ?, vehicle_img = ? WHERE id = ?";
         try (PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -155,12 +132,7 @@ public class VehicleDAO {
         }
     }
 
-    /**
-     * Deletes a vehicle from the database by vehicle ID.
-     * - **Design Pattern:** DAO Pattern.
-     * @param vehicleId Unique identifier for the vehicle.
-     * @return true if deletion is successful, false otherwise.
-     */
+
     public boolean deleteVehicle(int vehicleId) {
         String query = "DELETE FROM renting_vehicles WHERE id = ?";
         try (PreparedStatement stmt = conn.prepareStatement(query)) {

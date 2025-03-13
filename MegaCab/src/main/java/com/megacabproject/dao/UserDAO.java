@@ -132,7 +132,7 @@ public class UserDAO {
         return null;
     }
 
-    // New method to get all users from the database
+    // get all users from the database
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<>();
         String query = "SELECT * FROM users";
@@ -158,7 +158,7 @@ public class UserDAO {
         return users;
     }
 
-    // New method to get a user by its ID
+    //get a user by its ID
     public User getUserById(int userId) {
         String query = "SELECT * FROM users WHERE id = ?";
         try (PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -183,7 +183,7 @@ public class UserDAO {
         return null;
     }
 
-    // Existing updateUser and deleteUser methods here...
+    // Existing updateUser and deleteUser methods
     public boolean updateUser(User user) {
         String query = "UPDATE users SET email = ?, telephone = ?, full_name = ? WHERE id = ?";
         try (PreparedStatement stmt = conn.prepareStatement(query)) {

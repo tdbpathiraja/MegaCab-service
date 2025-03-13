@@ -20,7 +20,7 @@ public class DiscountCode {
         this.createdAt = createdAt;
     }
 
-    // Getters and Setters (Public Accessors)
+    // Getters and Setters
     public int getId() {
         return id;
     }

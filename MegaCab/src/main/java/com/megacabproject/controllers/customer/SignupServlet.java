@@ -12,15 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/**
- * SignupServlet handles user registration.
- * It follows the **Layered Architecture Pattern**, ensuring separation of concerns.
- *
- * **OOP Concepts Used:**
- * - **Encapsulation:** Private variables are used within controlled methods.
- * - **Abstraction:** The `PasswordHash.hashPassword()` method hides hashing logic.
- * - **Open-Closed Principle:** The servlet remains open for extension without modification by using the service layer.
- */
+
 @WebServlet("/SignupServlet")
 public class SignupServlet extends HttpServlet {
 
@@ -55,7 +47,7 @@ public class SignupServlet extends HttpServlet {
             System.out.println("ERROR: Email '" + email + "' is already registered.");
             out.println("<script>alert('Signup Failed! Email is already registered.'); window.location.href='auth.jsp';</script>");
         } else {
-            // 🔹 Register the user
+            // Register the user
             boolean registered = userService.registerUser(newUser);
 
             if (registered) {

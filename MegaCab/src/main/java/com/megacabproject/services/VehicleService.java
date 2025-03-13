@@ -23,29 +23,17 @@ public class VehicleService {
         return categories.stream().distinct().collect(Collectors.toList());
     }
 
-    /**
-     * Adds a new vehicle.
-     * @param vehicle Vehicle object with new vehicle data.
-     * @return true if vehicle added successfully, false otherwise.
-     */
+
     public boolean addVehicle(Vehicle vehicle) {
         return vehicleDAO.addVehicle(vehicle);
     }
 
-    /**
-     * Updates an existing vehicle.
-     * @param vehicle Vehicle object with updated data.
-     * @return true if update successful, false otherwise.
-     */
+
     public boolean updateVehicle(Vehicle vehicle) {
         return vehicleDAO.updateVehicle(vehicle);
     }
 
-    /**
-     * Deletes a vehicle by its ID.
-     * @param vehicleId Unique identifier of the vehicle.
-     * @return true if deletion successful, false otherwise.
-     */
+
     public boolean deleteVehicle(int vehicleId) {
         return vehicleDAO.deleteVehicle(vehicleId);
     }

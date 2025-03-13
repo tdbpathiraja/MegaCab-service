@@ -83,242 +83,33 @@
                     style="top: 1rem; left: 1rem; z-index: 1050; color: var(--secondary-color); background: var(--primary-color); width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;">
                 <i class="bi bi-list"></i>
             </button>
-            
+
             <!-- Dashboard Section -->
             <div id="dashboard-section" class="content-section active">
                 <div class="container-fluid">
-                    <h1 class="section-title">Dashboard Overview</h1>
-                    
-                    <!-- Status Cards Row -->
+                    <h1 class="section-title">MegaCab Car Renting System</h1>
+
+                    <!-- Project Information -->
                     <div class="row">
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card h-100 status-card status-card-yellow">
-                                <div class="status-icon">
-                                    <i class="bi bi-people-fill"></i>
-                                </div>
-                                <div class="status-info">
-                                    <h3>1,542</h3>
-                                    <p>Registered Users</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card h-100 status-card status-card-green">
-                                <div class="status-icon">
-                                    <i class="bi bi-calendar-check-fill"></i>
-                                </div>
-                                <div class="status-info">
-                                    <h3>78</h3>
-                                    <p>Active Bookings</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card h-100 status-card status-card-blue">
-                                <div class="status-icon">
-                                    <i class="bi bi-car-front-fill"></i>
-                                </div>
-                                <div class="status-info">
-                                    <h3>164</h3>
-                                    <p>Available Vehicles</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card h-100 status-card status-card-orange">
-                                <div class="status-icon">
-                                    <i class="bi bi-graph-up"></i>
-                                </div>
-                                <div class="status-info">
-                                    <h3>$58.2K</h3>
-                                    <p>Monthly Revenue</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Charts and Statistics -->
-                    <div class="row">
-                        <div class="col-lg-8 mb-4">
+                        <div class="col-12 mb-4">
                             <div class="card glass-effect">
                                 <div class="card-header bg-transparent">
-                                    <h5 class="mb-0">Monthly Booking Trends</h5>
+                                    <h5 class="mb-0">Project Information</h5>
                                 </div>
                                 <div class="card-body">
-                                    <img src="/api/placeholder/700/300" alt="Booking Trends Chart" class="img-fluid rounded">
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-4 mb-4">
-                            <div class="card glass-effect h-100">
-                                <div class="card-header bg-transparent">
-                                    <h5 class="mb-0">Vehicle Types Distribution</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div class="progress-container">
-                                        <div class="progress-info">
-                                            <span class="fw-medium">Sedan</span>
-                                            <span>42%</span>
+                                    <div class="d-flex flex-column">
+                                        <div class="mb-3">
+                                            <h6 class="fw-bold">Module Name:</h6>
+                                            <p>Advanced Programming</p>
                                         </div>
-                                        <div class="progress">
-                                            <div class="progress-bar bg-warning" style="width: 42%"></div>
+                                        <div class="mb-3">
+                                            <h6 class="fw-bold">Project:</h6>
+                                            <p>MegaCab Car Renting System</p>
                                         </div>
-                                    </div>
-                                    
-                                    <div class="progress-container">
-                                        <div class="progress-info">
-                                            <span class="fw-medium">SUV</span>
-                                            <span>28%</span>
+                                        <div>
+                                            <h6 class="fw-bold">Developed by:</h6>
+                                            <p>Tharindu Darshana Bandara Pathiraja</p>
                                         </div>
-                                        <div class="progress">
-                                            <div class="progress-bar bg-success" style="width: 28%"></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="progress-container">
-                                        <div class="progress-info">
-                                            <span class="fw-medium">Luxury</span>
-                                            <span>15%</span>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar bg-info" style="width: 15%"></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="progress-container">
-                                        <div class="progress-info">
-                                            <span class="fw-medium">Electric</span>
-                                            <span>10%</span>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar bg-primary" style="width: 10%"></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="progress-container">
-                                        <div class="progress-info">
-                                            <span class="fw-medium">Van</span>
-                                            <span>5%</span>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar bg-danger" style="width: 5%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Recent Activity -->
-                    <div class="row">
-                        <div class="col-lg-6 mb-4">
-                            <div class="card glass-effect">
-                                <div class="card-header bg-transparent">
-                                    <h5 class="mb-0">Recent Activities</h5>
-                                </div>
-                                <div class="card-body p-0">
-                                    <div class="activity-item new">
-                                        <div class="d-flex">
-                                            <div class="activity-icon bg-warning text-white">
-                                                <i class="bi bi-person-plus"></i>
-                                            </div>
-                                            <div class="activity-content">
-                                                <h6 class="activity-title">New Registration</h6>
-                                                <p class="activity-text">Emma Davis created a new account</p>
-                                                <small class="activity-time">Just now</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="activity-item">
-                                        <div class="d-flex">
-                                            <div class="activity-icon bg-success text-white">
-                                                <i class="bi bi-calendar-check"></i>
-                                            </div>
-                                            <div class="activity-content">
-                                                <h6 class="activity-title">Booking Confirmed</h6>
-                                                <p class="activity-text">Michael Brown confirmed booking #78423</p>
-                                                <small class="activity-time">2 hours ago</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="activity-item">
-                                        <div class="d-flex">
-                                            <div class="activity-icon bg-info text-white">
-                                                <i class="bi bi-car-front"></i>
-                                            </div>
-                                            <div class="activity-content">
-                                                <h6 class="activity-title">Vehicle Returned</h6>
-                                                <p class="activity-text">Sophia Miller returned Toyota Camry (XYZ-1234)</p>
-                                                <small class="activity-time">Yesterday</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="activity-item">
-                                        <div class="d-flex">
-                                            <div class="activity-icon bg-danger text-white">
-                                                <i class="bi bi-exclamation-circle"></i>
-                                            </div>
-                                            <div class="activity-content">
-                                                <h6 class="activity-title">Maintenance Alert</h6>
-                                                <p class="activity-text">Honda CR-V scheduled for maintenance</p>
-                                                <small class="activity-time">2 days ago</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-6 mb-4">
-                            <div class="card glass-effect">
-                                <div class="card-header bg-transparent">
-                                    <h5 class="mb-0">Top Performing Vehicles</h5>
-                                </div>
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table mb-0">
-                                            <thead>
-                                                <tr>
-                                                    <th>Vehicle</th>
-                                                    <th>Type</th>
-                                                    <th>Bookings</th>
-                                                    <th>Revenue</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Tesla Model 3</td>
-                                                    <td>Electric</td>
-                                                    <td>145</td>
-                                                    <td>$14,500</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Toyota Camry</td>
-                                                    <td>Sedan</td>
-                                                    <td>132</td>
-                                                    <td>$10,560</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Honda CR-V</td>
-                                                    <td>SUV</td>
-                                                    <td>117</td>
-                                                    <td>$9,945</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>BMW X5</td>
-                                                    <td>Luxury</td>
-                                                    <td>98</td>
-                                                    <td>$19,600</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -459,7 +250,7 @@
                                 <div id="bookingsCount">Showing 0 of 0 bookings</div>
                                 <nav>
                                     <ul class="pagination" id="bookingPagination">
-                                        <!-- Pagination items will be dynamically generated if needed -->
+
                                     </ul>
                                 </nav>
                             </div>
@@ -500,15 +291,15 @@
                         </div>
                     </div>
 
-                    <!-- Vehicle Cards loaded dynamically via AJAX -->
+
                     <div class="row" id="vehiclesContainer">
-                        <!-- Vehicle cards will be appended here -->
+
                     </div>
 
                     <div class="d-flex justify-content-end mt-3">
                         <nav>
                             <ul class="pagination" id="vehiclePagination">
-                                <!-- Pagination items can be generated if needed -->
+
                             </ul>
                         </nav>
                     </div>
@@ -565,7 +356,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <!-- Single submit button for both add and update -->
+
                                 <button type="submit" class="btn btn-primary">Save Vehicle</button>
                             </div>
                         </form>

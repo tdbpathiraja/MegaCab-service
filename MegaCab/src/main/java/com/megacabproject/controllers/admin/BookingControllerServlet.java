@@ -35,7 +35,7 @@ public class BookingControllerServlet extends HttpServlet {
 
         switch (action.toLowerCase()) {
             case "list":
-                // Fetch all bookings (you can implement pagination/search as needed)
+                // Fetch all bookings
                 List<Booking> bookings = bookingService.getAllBookings();
                 int totalBookings = bookings.size();
                 Map<String, Object> listResult = new HashMap<>();
@@ -44,7 +44,6 @@ public class BookingControllerServlet extends HttpServlet {
                 out.print(gson.toJson(listResult));
                 break;
 
-            // Optionally add a "getbooking" action if needed in future
 
             default:
                 out.print(gson.toJson("Invalid action"));

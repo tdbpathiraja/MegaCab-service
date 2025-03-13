@@ -11,13 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import org.json.JSONObject;
 
-/**
- * DiscountCodeServlet handles discount code validation via GET method.
- * - **Presentation Layer (Controller):** Delegates business logic to DiscountCodeService.
- * - **Design Patterns:** Singleton (Service instance), DAO via Service.
- * - **OOP Concepts:** Encapsulation (private fields), Abstraction (service methods).
- * - **Web Services:** Only GET and POST methods (no REST API).
- */
+
 @WebServlet("/DiscountCodeServlet")
 public class DiscountCodeServlet extends HttpServlet {
     private final DiscountCodeService discountCodeService = new DiscountCodeService();

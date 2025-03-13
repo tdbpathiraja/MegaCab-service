@@ -24,12 +24,12 @@ public class UserService {
         return userDAO.getUserByUsername(username);
     }
 
-    // New method to retrieve all users
+    //retrieve all users
     public List<User> getAllUsers() {
         return userDAO.getAllUsers();
     }
 
-    // New method to retrieve a user by ID
+    //retrieve a user by ID
     public User getUserById(int userId) {
         return userDAO.getUserById(userId);
     }

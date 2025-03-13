@@ -35,9 +35,9 @@ public class ManageUserServlet extends HttpServlet {
 
         switch (action.toLowerCase()) {
             case "list":
-                // Fetch users from the database (implement getAllUsers() in your service layer)
+                // Fetch users from the database
                 List<User> users = userService.getAllUsers();
-                int totalUsers = users.size();  // Adjust for pagination if needed.
+                int totalUsers = users.size();
                 Map<String, Object> listResult = new HashMap<>();
                 listResult.put("users", users);
                 listResult.put("totalUsers", totalUsers);
@@ -47,7 +47,7 @@ public class ManageUserServlet extends HttpServlet {
             case "getuser":
                 try {
                     int userId = Integer.parseInt(request.getParameter("userId"));
-                    // Fetch single user (implement getUserById(int userId) in your service layer)
+                    // Fetch single user
                     User user = userService.getUserById(userId);
                     out.print(gson.toJson(user));
                 } catch (NumberFormatException e) {
@@ -97,7 +97,7 @@ public class ManageUserServlet extends HttpServlet {
                     String email = request.getParameter("editEmail");
                     String fullName = request.getParameter("editName");
                     String telephone = request.getParameter("editPhone");
-                    // Create a new User object with updated fields. Other fields are set to null or can be fetched as needed.
+                    // Create a new User object with updated fields.
                     User user = new User(userId, null, null, fullName, null, telephone, null, email, null);
                     boolean updated = userService.updateUser(user);
                     result.put("success", updated);
